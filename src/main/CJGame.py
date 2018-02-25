@@ -35,11 +35,14 @@ def main():
 
         manager.scene.update()
         selectionScreen = CharacterSelection()
+        title = TitleScene()
         manager.go_to(CharacterSelection())
         active_sprite_list = pygame.sprite.Group()
+
         kaiyu = Kaiyu()
         active_sprite_list.add(kaiyu)
         active_sprite_list.draw(screen)
+        title.render(screen)
         pygame.display.flip()
 
 

@@ -5,6 +5,8 @@ class CharacterSelection(object):
 
     def render(self, screen):
         self.image = pygame.image.load("Assets/Screens/characterselection.png")
+        screen.blit(self.image)
+
     def update(self):
         pass
 
