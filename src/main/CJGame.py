@@ -5,6 +5,7 @@ from pygame.locals import *
 from src.main.Scenes.SceneManager import SceneMananger
 #Kill Ngrsda
 #i want to dieh
+#Nigge.
 DISPLAY = 1200, 600
 DEPTH = 0
 FLAGS = 0
