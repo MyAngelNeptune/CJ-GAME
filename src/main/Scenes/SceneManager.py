@@ -1,6 +1,4 @@
-import pygame
-
-from src.main.Scenes.TitleScene import TitleScene
+from main.Scenes.Menus.TitleScene import TitleScene
 
 
 class SceneMananger(object):

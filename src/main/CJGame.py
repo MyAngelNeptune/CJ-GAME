@@ -1,8 +1,12 @@
+import pygame
 from pygame.locals import *
 
 from src.main.Charcters.Kaiyu import Kaiyu
 
-from src.main.Scenes.SceneManager import *
+from src.main.Scenes.SceneManager import SceneMananger
+from src.main.Scenes.Menus.TitleScene import TitleScene
+from src.main.Scenes.Menus.CharcterSelection import CharacterSelection
+
 
 # Kill Ngrsda
 # i want to dieh
@@ -30,8 +34,12 @@ def main():
         manager.scene.handle_events(pygame.event.get())
 
         manager.scene.update()
+        selectionScreen = CharacterSelection()
+        manager.go_to(CharacterSelection())
+        active_sprite_list = pygame.sprite.Group()
         kaiyu = Kaiyu()
-        kaiyu.draw(screen)
+        active_sprite_list.add(kaiyu)
+        active_sprite_list.draw(screen)
         pygame.display.flip()
 
 
