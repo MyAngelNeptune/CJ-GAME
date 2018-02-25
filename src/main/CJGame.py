@@ -1,14 +1,17 @@
-import pygame
 from pygame.locals import *
-#lelleel
 
-from src.main.Scenes.SceneManager import SceneMananger
-#Kill Ngrsda
-#i want to dieh
-#Nigge.
+from src.main.Charcters.Kaiyu import Kaiyu
+
+from src.main.Scenes.SceneManager import *
+
+# Kill Ngrsda
+# i want to dieh
+# Nigge.
 DISPLAY = 1200, 600
 DEPTH = 0
 FLAGS = 0
+
+
 def main():
     pygame.init()
     screen = pygame.display.set_mode(DISPLAY, FLAGS, DEPTH)
@@ -25,8 +28,12 @@ def main():
             running = False
             return
         manager.scene.handle_events(pygame.event.get())
+
         manager.scene.update()
+        kaiyu = Kaiyu()
+        kaiyu.draw(screen)
         pygame.display.flip()
+
 
 if __name__ == "__main__":
     main()
