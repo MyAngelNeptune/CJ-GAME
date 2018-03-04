@@ -1,11 +1,13 @@
 import pygame
 from pygame.locals import *
 
+from src import *
 from src.main.Charcters.Kaiyu import Kaiyu
 
 from src.main.Scenes.SceneManager import SceneMananger
 from src.main.Scenes.Menus.TitleScene import TitleScene
 from src.main.Scenes.Menus.CharcterSelection import CharacterSelection
+from src.main.Scenes.Button import Button
 
 
 # Kill Ngrsda
@@ -39,10 +41,11 @@ def main():
         manager.go_to(CharacterSelection())
         active_sprite_list = pygame.sprite.Group()
 
-        kaiyu = Kaiyu()
-        active_sprite_list.add(kaiyu)
         active_sprite_list.draw(screen)
+        startButton = Button("Assets/Buttons/play.png", (727, 190), (400,125))
         title.render(screen)
+        startButton.draw(screen)
+
         pygame.display.flip()
 
 

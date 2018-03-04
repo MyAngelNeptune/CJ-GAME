@@ -14,6 +14,6 @@ class Kaiyu(Character):
         self.y = 0
 
         self.image = pygame.image.load("Assets/Characters/kaiyu/Kaiyu.png")
-        pygame.transform.scale(self.image, (300 , 300))
+        pygame.transform.scale(self.image, (300,300))
         # Fetch the rectangle object that has the dimensions of the image
         self.rect = self.image.get_rect()
