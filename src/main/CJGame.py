@@ -40,8 +40,8 @@ def main():
         title = TitleScene()
         manager.go_to(CharacterSelection())
         active_sprite_list = pygame.sprite.Group()
-
         active_sprite_list.draw(screen)
+
         startButton = Button("Assets/Buttons/play.png", (727, 190), (400,125))
         title.render(screen)
         startButton.draw(screen)

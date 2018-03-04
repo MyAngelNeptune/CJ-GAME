@@ -18,7 +18,6 @@ class Button(object):
         screen.blit(self.image, self.position)
 
 #    def event_handler(self, event):
-       # change selected color if rectange clicked
 #        if event.type == pygame.MOUSEBUTTONDOWN: # is some button clicked
  #           if event.button == 1: # is left button clicked
                 #if self._rect.collidepoint(event.pos): # is mouse over button
