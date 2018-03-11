@@ -1,4 +1,4 @@
-from main.Scenes.Menus.TitleScene import TitleScene
+from src.main.Scenes.Menus.TitleScene import TitleScene
 
 
 class SceneMananger(object):

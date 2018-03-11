@@ -42,9 +42,15 @@ def main():
         active_sprite_list = pygame.sprite.Group()
         active_sprite_list.draw(screen)
 
-        startButton = Button("Assets/Buttons/play.png", (727, 190), (400,125))
+        startButton = Button("Assets/Buttons/play.png", (727, 50), (400,125))
         title.render(screen)
         startButton.draw(screen)
+
+        creditsButton = Button("Assets/Buttons/credits.png", (727, 190), (400,125))
+        creditsButton.draw(screen)
+
+        quitButton = Button("Assets/Buttons/quit.png", (727,330), (400,125))
+        quitButton.draw(screen)
 
         pygame.display.flip()
 
