@@ -3,8 +3,8 @@ class Credits(object):
     def __init__(self):
         super(Credits, self).__init__()
 
-    def render(self, screen):
-        self.image = pygame.image.load("Assets/Screens/credits.png")
+    def render(self, screen, events, manager):
+        self.image = pygame.image.load("Assets/Screens/creditpage.png")
         self.image = pygame.transform.scale(self.image, (1200, 600))
         screen.blit(self.image, [0, 0])
 

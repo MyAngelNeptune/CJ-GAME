@@ -3,6 +3,7 @@ from src.main.Scenes.Scene import Scene
 from src.main.Scenes.Button import Button
 import src.main.Scenes.SceneManager
 from src.main.Scenes.Menus.CharcterSelection import CharacterSelection
+from src.main.Scenes.Menus.Credits import Credits
 class TitleScene(Scene):
     def __init__(self):
         super(TitleScene, self).__init__()
@@ -24,12 +25,17 @@ class TitleScene(Scene):
         quitButton.draw(screen)
 
         selectionScreen = CharacterSelection()
+        CreditsScreen = Credits()
 
         #Checks if the start button was clicked
         if(startButton.event_handler(events)):
             manager.go_to(selectionScreen)
             manager.scene.render(screen, events, manager)
             pygame.display.flip()
+
+        elif(creditsButton.event_handler(events)):
+            manager.go_to(CreditsScreen)
+            manager.scene.render(screen, events, manager)
 
         #Checks if the quit button was clicked
         elif(quitButton.event_handler(events)):
