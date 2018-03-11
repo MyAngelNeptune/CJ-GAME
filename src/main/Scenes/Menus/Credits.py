@@ -1,5 +1,7 @@
 import pygame
+from src.main.Scenes.Scene import Scene
 from src.main.Scenes.Button import Button
+from src.main.Scenes.Menus.TitleScene import TitleScene
 class Credits(object):
     def __init__(self):
         super(Credits, self).__init__()
@@ -11,6 +13,13 @@ class Credits(object):
 
         returnButton = Button("Assets/Buttons/return.png", (600.727, 727-300), (300, 95))
         returnButton.draw(screen)
+
+        TitleScreen = TitleScene()
+
+        if (returnButton.event_handler(events)):
+            manager.go_to(TitleScreen)
+            manager.scene.render(screen, events, manager)
+            pygame.display.flip()
 
     def update(self):
         pass
