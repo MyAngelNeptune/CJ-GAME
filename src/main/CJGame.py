@@ -25,7 +25,23 @@ def main():
     timer = pygame.time.Clock()
     running = True
 
+    selectionScreen = CharacterSelection()
+    title = TitleScene()
     manager = SceneMananger()
+
+    active_sprite_list = pygame.sprite.Group()
+    active_sprite_list.draw(screen)
+
+    startButton = Button("Assets/Buttons/play.png", (727, 50), (400, 125))
+
+    title.render(screen)
+    startButton.draw(screen)
+
+    creditsButton = Button("Assets/Buttons/credits.png", (727, 190), (400, 125))
+    creditsButton.draw(screen)
+
+    quitButton = Button("Assets/Buttons/quit.png", (727, 330), (400, 125))
+    quitButton.draw(screen)
 
     while running:
         timer.tick(60)
@@ -33,24 +49,15 @@ def main():
         if pygame.event.get(QUIT):
             running = False
             return
-        manager.scene.handle_events(pygame.event.get())
 
         manager.scene.update()
-        selectionScreen = CharacterSelection()
-        title = TitleScene()
-        manager.go_to(CharacterSelection())
-        active_sprite_list = pygame.sprite.Group()
-        active_sprite_list.draw(screen)
 
-        startButton = Button("Assets/Buttons/play.png", (727, 50), (400,125))
-        title.render(screen)
-        startButton.draw(screen)
+        events = pygame.event.get()
 
-        creditsButton = Button("Assets/Buttons/credits.png", (727, 190), (400,125))
-        creditsButton.draw(screen)
-
-        quitButton = Button("Assets/Buttons/quit.png", (727,330), (400,125))
-        quitButton.draw(screen)
+        if(startButton.event_handler(events)):
+            manager.go_to(selectionScreen)
+        elif(quitButton.event_handler(events)):
+            pygame.quit()
 
         pygame.display.flip()
 

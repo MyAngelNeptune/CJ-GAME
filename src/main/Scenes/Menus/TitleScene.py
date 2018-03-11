@@ -1,5 +1,6 @@
 import pygame
-class TitleScene(object):
+from src.main.Scenes.Scene import Scene
+class TitleScene(Scene):
     def __init__(self):
         super(TitleScene, self).__init__()
 
@@ -11,5 +12,8 @@ class TitleScene(object):
     def update(self):
         pass
 
-    def handle_events(self, events):
-        pass
+    def handle_events(self, events, scene):
+        for e in events:
+            if e.type == pygame.MOUSEBUTTONDOWN:
+                if e.button == 1:
+                    self.manager.go_to(scene)
