@@ -5,7 +5,7 @@ class Scene(object):
     def __init__(self):
         pass
 
-    def render(self, screen):
+    def render(self, screen, events, manager):
         raise NotImplementedError
 
     def update(self):
